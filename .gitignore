@@ -1,25 +1,50 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
+package main
+import "fmt"
+/*
+Build a calculator project that allows the user to enter 3 numbers and the operation wanted. The calculator
+should show the final result
+*/
 
-# Test binary, built with `go test -c`
-*.test
+func performcalculation(n1 float32, n2 float32, o string){
+	if o== "+"{
+		fmt.Println("The result is", n1 + n2)
+	} else if 0== "-"{
+		fmt.Println("The result is", n1 - n2)
+	} else if 0=="x" {
+		fmt.Println("the result is", n1* n2 )
+	}else if 0== "/" {
+		if n2 != 0{
+		fmt.Println("the result is", n1 /n2)
+		}else {
+			fmt.Println("it is not possible to divide a number by zero")
 
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+		}
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+		}
+	}
+}
 
-# Go workspace file
-go.work
-go.work.sum
 
-# env file
-.env
+
+ func main(){
+	var number1 float32
+	var number2 float32
+	var operator string
+	fmt.Println("Please snter the first number")
+	fmt.Scan(&number1)
+
+	fmt.Println("Please enter the second number")
+	fmt.Scan(&number2)
+
+	fmt.Println("Please enter the operator")
+	fmt.Scan(&operator)
+
+	if operator == "+"{
+		fmt.Println("The result is", number1 + number2)
+
+    performcalculation(number1,number2,operator)
+
+	}
+
+
+}
